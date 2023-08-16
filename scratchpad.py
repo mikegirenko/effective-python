@@ -36,3 +36,25 @@ for i in range(3):
         break  # using break here will not print 'Printing else'. If not using break, 'Printing else' will print
 else:
     print("Printing else")
+
+# try:
+#     var = 3 / 0  # it results is ZeroDivisionError: division by zero
+# finally:
+#     print("ZeroDivisionError")  # but this still prints
+
+try:
+    file = open("non_existing_file.txt")  # it results in FileNotFoundError: [Errno 2] No such file or
+    # directory: 'non_existing_file.txt'
+except FileNotFoundError:  # it will catch FileNotFoundError
+    print("I am handling FileNotFoundError and printing text without raising exception. It helps when you dont know "
+          "if this file exists")
+
+
+def divide (a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:  # it will catch ZeroDivisionError
+        return 0
+
+
+print("Printing", divide(3, 0))
