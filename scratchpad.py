@@ -29,3 +29,10 @@ for i in range(5):
 flavor_list = ["vanilla", "pecan", "strawberry"]
 for i, flavor in enumerate(flavor_list):
     print(i + 1, flavor)  # + 1 is optional, if not provided, 0 will be used
+
+for i in range(3):
+    print("Loop:", i)
+    if i == 1:
+        break  # using break here will not print 'Printing else'. If not using break, 'Printing else' will print
+else:
+    print("Printing else")
