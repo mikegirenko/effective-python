@@ -83,3 +83,18 @@ print_greeting_again(greeting=greeting, name=name)  # it prints Hello Jake ! bec
 print_greeting_again(name=name, greeting=greeting, end=end)  # it prints Hello Jake ? even if arguments order is
 # different compared to function definition
 
+
+class MyObject():
+    def __init__(self):
+        self.public_field = "this is a public field"
+        self.__private_field = "this is a private field"  # a private field
+
+    def get_private_field(self):  # this accesses a private field
+        return self.__private_field
+
+
+obj = MyObject()
+assert obj.public_field == "this is a public field"  # this assertion is true
+# assert obj.private_field == "this is a private field"  # this errors out with
+# # AttributeError: 'MyObject' object has no attribute 'private_field'
+assert obj.get_private_field() == "this is a private field"  # this assertion is true
