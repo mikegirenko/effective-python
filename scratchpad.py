@@ -58,3 +58,28 @@ def divide (a, b):
 
 
 print("Printing", divide(3, 0))
+
+
+def print_greeting(greeting, *name):  # using Variable Positional Argument
+    print(greeting, name)
+
+
+greeting = "Hey"
+name = "Mike"
+print_greeting(greeting, name)  # it prints Hey ('Mike',)
+print_greeting(greeting)  # it prints Hey ()
+
+
+def print_greeting_again(greeting, name, end="!"):  # using Keyword Arguments with default value
+    print(greeting, name, end)
+
+
+greeting = "Hello"
+name = "Jake"
+end = "?"
+# calling with Keyword Arguments with default value
+print_greeting_again(greeting=greeting, name=name, end=end)  # it prints Hello Jake ?
+print_greeting_again(greeting=greeting, name=name)  # it prints Hello Jake ! because default value used
+print_greeting_again(name=name, greeting=greeting, end=end)  # it prints Hello Jake ? even if arguments order is
+# different compared to function definition
+
