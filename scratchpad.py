@@ -1,4 +1,5 @@
-from datetime import datetime, timezone
+import cProfile
+from datetime import datetime
 import sys
 
 print(sys.version_info)
@@ -104,3 +105,13 @@ assert obj.get_private_field() == "this is a private field"  # this assertion is
 
 time_now = datetime.now()
 print(time_now)
+
+
+def populate_list():
+    this_list = []
+    for i in range(10000000):
+        this_list.append(i)
+
+
+profiler = cProfile  # using profiler to test performance
+profiler.run('populate_list()')
